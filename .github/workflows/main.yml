@@ -2,10 +2,16 @@
 name: Build Application for Windows
 
 # Workflow's trigger
-on:
-  push:
-    tags:
-      - '*'
+on: 
+  push: # push 操作
+    branches: # 分支
+      - master # 主分支
+    paths: # 路径
+      - logs/jdc-1.md # 监听logs目录下所有的jdc-1.md操作
+  watch:                              # 监视操作
+    types: [started]                  # 点击 star 之后
+  release:
+    types: [published]
 
 # Workflow's jobs
 jobs:
