@@ -280,6 +280,7 @@
 #define _SPI_NAND_SEMAPHORE_LOCK()			/* Disable interrupt */
 #define _SPI_NAND_SEMAPHORE_UNLOCK()			/* Enable interrupt  */
 #define _SPI_NAND_PRINTF			printf	/* Always print information */
+#define SPI_NAND_FLASH_DEBUG
 #if !defined(SPI_NAND_FLASH_DEBUG)
 #define _SPI_NAND_DEBUG_PRINTF(level, fmt, args...)
 #define _SPI_NAND_DEBUG_PRINTF_ARRAY(level, array, len)
