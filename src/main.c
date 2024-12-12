@@ -70,7 +70,7 @@ void usage(void)
 		"  Usage:\n"\
 		" -h             display this message\n"\
 		" -d             disable internal ECC(use read and write page size + OOB size)\n"\
-		" -o <bytes>     manual set OOB size with disable internal ECC(default 0)\n"\
+		" -o <bytes>     manual set OOB size(default 0)\n"\
 		" -I             ECC ignore errors(for read test only)\n"\
 		" -k             Skip BAD pages, try to read or write in next page\n"\
 		" -L             print list support chips\n"\
@@ -247,9 +247,11 @@ int main(int argc, char* argv[])
 #endif
 	if (OOB_size) {
 		if (ECC_fcheck == 1) {
-			printf("Ignore option -o, use with -d only!\n");
-			OOB_size = 0;
-		} else {
+			printf("Write oob area!\n");
+			//printf("Ignore option -o, use with -d only!\n");
+			//OOB_size = 0;
+		} 
+		{
 			if (OOB_size > 256) {
 				printf("Error: Maximum set OOB size <= 256!!!\n");
 				goto out;
